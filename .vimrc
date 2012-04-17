@@ -1,3 +1,4 @@
+autocmd!
 " Vundle settings START
 set nocompatible
 filetype off
@@ -7,7 +8,6 @@ call vundle#rc()
 
 " Github sources
 Bundle 'gmarik/vundle'
-" Command-T require outside configuration, read the help
 Bundle 'wincent/Command-T'
 Bundle 'tpope/vim-fugitive'
 
@@ -28,3 +28,7 @@ set hidden
 
 " Command-T settings
 let g:CommandTMatchWindowAtTop=1
+autocmd BufWrite * CommandTFlush
+
+" Source .vimrc on write
+autocmd BufWritePost ~/.vimrc source ~/.vimrc
