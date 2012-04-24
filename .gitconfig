@@ -2,7 +2,7 @@
 	name = Dorian Patterson
 	email = imaginationac@gmail.com
 [core]
-	editor = "gvim -f --remote"
+	editor = "gvim -f"
 	excludesfile = /home/dorian/.gitignore_global
 [color]
 	ui = true
