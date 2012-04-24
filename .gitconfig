@@ -1,0 +1,13 @@
+[user]
+	name = Dorian Patterson
+	email = imaginationac@gmail.com
+[core]
+	editor = "gvim -f --remote"
+	excludesfile = /home/dorian/.gitignore_global
+[color]
+	ui = true
+[merge]
+	tool = splice
+[mergetool "splice"]
+	cmd = "gvim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+	trustExitCode = true

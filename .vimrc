@@ -12,12 +12,13 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 " Command-T requires additional setup
 Bundle 'wincent/Command-T'
-Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tomasr/molokai'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'sjl/gundo.vim'
+Bundle 'sjl/splice.vim'
+Bundle 'sjl/clam.vim'
 
 " Vim-Scripts.org sources (also hosted on Github)
 Bundle 'vim-coffee-script'
@@ -45,6 +46,11 @@ set hidden
 " Command-T settings
 let g:CommandTMatchWindowAtTop=1
 autocmd BufWrite * CommandTFlush
+
+" Keymappings
+" Gundo toggle
+nnoremap <F5> :GundoToggle<CR>
+nnoremap ,v :e ~/.vimrc<CR>
 
 " Source .vimrc on write
 autocmd BufWritePost ~/.vimrc source ~/.vimrc
