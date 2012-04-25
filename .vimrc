@@ -25,13 +25,19 @@ Bundle 'vim-coffee-script'
 Bundle 'surround.vim'
 Bundle 'tComment'
 Bundle 'jade.vim'
+Bundle 'vim-json-bundle'
 
 filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Statusline 
-" set statusline=%f\ %y%w%m%f%h%L
 " Powerline settings
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+if has("gui_running")
+	if has("unix")
+		set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+	elseif has("win32") || has("win64")
+		set guifont=Consolas:h10:cANSI
+	endif
+endif
+
 let g:Powerline_symbols = 'fancy'
 set laststatus=2
 set encoding=utf-8
