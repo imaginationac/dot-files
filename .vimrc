@@ -51,12 +51,20 @@ set hidden
 
 " Command-T settings
 let g:CommandTMatchWindowAtTop=1
-autocmd BufWrite * CommandTFlush
+augroup CommandT_augroup
+	autocmd!
+	autocmd BufWrite * CommandTFlush
+augroup END
 
 " Keymappings
 " Gundo toggle
 nnoremap <F5> :GundoToggle<CR>
+" Open vimrc for editing
 nnoremap ,v :e ~/.vimrc<CR>
 
 " Source .vimrc on write
-autocmd BufWritePost ~/.vimrc source ~/.vimrc
+augroup vimrc_augroup
+	autocmd!
+	autocmd BufWritePost ~/.vimrc source ~/.vimrc
+	autocmd BufWritePost ~/.vimrc :PowerlineReloadColorscheme
+augroup END
