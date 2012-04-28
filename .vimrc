@@ -19,6 +19,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'sjl/gundo.vim'
 Bundle 'sjl/splice.vim'
 Bundle 'sjl/clam.vim'
+Bundle 'suan/vim-instant-markdown'
 
 " Vim-Scripts.org sources (also hosted on Github)
 Bundle 'vim-coffee-script'
@@ -32,39 +33,56 @@ filetype plugin indent on
 " Powerline settings
 if has("gui_running")
 	if has("unix")
-		set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+		set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10,DejaVu\ Sans\ Mono\ 10
 	elseif has("win32") || has("win64")
 		set guifont=Consolas:h10:cANSI
 	endif
 endif
 
-let g:Powerline_symbols = 'fancy'
+let Powerline_symbols = 'fancy'
 set laststatus=2
 set encoding=utf-8
 
 set number
-colorscheme molokai
+set background=dark
+colorscheme solarized
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set hidden
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Command-T settings
-let g:CommandTMatchWindowAtTop=1
-augroup CommandT_augroup
-	autocmd!
-	autocmd BufWrite * CommandTFlush
-augroup END
-
+let g:CommandTMatchWindowAtTop=0
+if has("autocmd")
+	augroup CommandT_augroup
+		autocmd!
+		autocmd BufWritePost, * CommandTFlush
+	augroup END
+endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Keymappings
 " Gundo toggle
 nnoremap <F5> :GundoToggle<CR>
 " Open vimrc for editing
 nnoremap ,v :e ~/.vimrc<CR>
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Filetype autocommands
+" Set .md files as markdown
+if has("autocmd")
+	augroup markdown
+		autocmd!
+		autocmd BufWrite,BufRead, *.md set filetype=markdown
+	augroup END
+endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Source .vimrc on write
-augroup vimrc_augroup
-	autocmd!
-	autocmd BufWritePost ~/.vimrc source ~/.vimrc
-	autocmd BufWritePost ~/.vimrc :PowerlineReloadColorscheme
-augroup END
+if has("autocmd")
+	augroup vimrc_augroup
+		autocmd!
+		autocmd BufWritePost ~/.vimrc source ~/.vimrc
+		autocmd BufWritePost ~/.vimrc PowerlineReloadColorscheme
+		" Remove any
+		autocmd BufWritePost ~/.vimrc BundleClean!
+		autocmd BufWritePost ~/.vimrc BundleInstall
+	augroup END
+endif

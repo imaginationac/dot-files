@@ -10,4 +10,9 @@ set guioptions-=L
 set guioptions+=c
 
 " Source .gvimrc on write
-autocmd BufWritePost ~/.gvimrc source ~/.gvimrc
+if has("autocmd")
+	augroup gvimrc_write
+		autocmd!
+		autocmd BufWritePost ~/.gvimrc source ~/.gvimrc
+	augroup END
+endif

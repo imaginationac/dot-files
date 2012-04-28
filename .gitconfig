@@ -3,7 +3,7 @@
 	email = imaginationac@gmail.com
 [core]
 	editor = "gvim -f"
-	excludesfile = /home/dorian/.gitignore_global
+	excludesfile = /home/dorian/.gitignore
 [color]
 	ui = true
 [merge]

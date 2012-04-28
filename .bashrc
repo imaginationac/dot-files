@@ -49,7 +49,8 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-#Git branch
+# Git branch
+# TODO: Add branchd status
 function parse_git_branch {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
   echo "("${ref#refs/heads/}")"
@@ -62,7 +63,7 @@ YELLOW="\[\033[01;33m\]"
 STOPCOLOR="\[\033[00m\]"
 
 if [ "$color_prompt" = yes ]; then
-		PS1="${debian_chroot:+($debian_chroot)}$GREEN\u@\h$STOPCOLOR:$LIGHTBLUE\w$STOPCOLOR$YELLOW\$(parse_git_branch)$STOPCOLOR\$ "
+		PS1="${debian_chroot:+($debian_chroot)}$GREEN\u$STOPCOLOR at $GREEN\h$STOPCOLOR in $LIGHTBLUE\w$STOPCOLOR$YELLOW \$(parse_git_branch)$STOPCOLOR\n> "
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -189,3 +190,4 @@ else
 fi
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+export PATH=$HOME/local/bin:$PATH
