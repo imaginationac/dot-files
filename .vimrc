@@ -75,7 +75,7 @@ nnoremap ,v :e ~/.vimrc<CR>
 if has("autocmd")
 	augroup markdown
 		autocmd!
-		autocmd BufWrite,BufRead, *.md set filetype=markdown
+		autocmd BufNewFile,BufWrite,BufRead, *.md set filetype=markdown
 	augroup END
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
