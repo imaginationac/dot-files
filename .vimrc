@@ -65,7 +65,10 @@ if has("autocmd")
 		autocmd BufWritePost, * CommandTFlush
 	augroup END
 endif
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Clam settings
+let g:clam_winpos = 'belowright'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Keymappings
 " Gundo toggle
 nnoremap <F5> :GundoToggle<CR>
