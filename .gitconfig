@@ -1,3 +1,11 @@
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:\"%Cgreen%h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
 [user]
 	name = Dorian Patterson
 	email = imaginationac@gmail.com
