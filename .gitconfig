@@ -4,6 +4,8 @@
 [core]
 	editor = "gvim -f"
 	excludesfile = /home/dorian/.gitignore
+	autocrlf = input
+	safecrlf = true
 [color]
 	ui = true
 [merge]
