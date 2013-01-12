@@ -67,8 +67,23 @@ let g:clam_winpos = 'belowright'
 " Keymappings
 " Gundo toggle
 nnoremap <F5> :GundoToggle<CR>
+
 " Open vimrc for editing
-nnoremap ,v :e ~/.vimrc<CR>
+if has('unix')
+	nnoremap ,v :e ~/.vimrc<CR>
+elseif has("win32") || has("win64")
+	nnoremap ,v :e ~/_vimrc<CR>
+endif
+
+" Open gvimrc for editing
+if has('unix')
+	nnoremap ,g :e ~/.gvimrc<CR>
+elseif has("win32") || has("win64")
+	nnoremap ,g :e ~/_gvimrc<CR>
+endif
+
+" Toggle showing invisiblies (tabs and line endings)
+nnoremap ,l :set list!<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Filetype autocommands
 " Set .md files as markdown
