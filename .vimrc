@@ -33,13 +33,6 @@ Bundle 'vim-json-bundle'
 
 filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if has("gui_running")
-	if has("unix")
-		set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10,DejaVu\ Sans\ Mono\ 10,Monospace\ 10
-	elseif has("win32") || has("win64")
-		set guifont=Consolas:h10:cANSI
-	endif
-endif
 
 set laststatus=2
 set encoding=utf-8
