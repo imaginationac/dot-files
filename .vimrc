@@ -45,6 +45,9 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set hidden
+" TODO: Add whitespace rules for editing Haskell files.
+" Symbols for listchars
+set listchars=tab:▸\ ,eol:¬
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Powerline settings
 source ~/.vim/bundle/powerline/powerline/ext/vim/source_plugin.vim
