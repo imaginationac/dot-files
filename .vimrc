@@ -22,6 +22,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'wavded/vim-stylus'
 " Powerline isn't configured for Vundle yet, require some setup
 Bundle 'Lokaltog/powerline'
+Bundle 'othree/html5-syntax.vim'
 
 " Vim-Scripts.org sources (also hosted on Github)
 Bundle 'vim-coffee-script'
@@ -98,9 +99,18 @@ endif
 if has("autocmd")
 	augroup vimrc_augroup
 		autocmd!
-		autocmd BufWritePost ~/.vimrc source ~/.vimrc
-		" Remove any
-		autocmd BufWritePost ~/.vimrc BundleClean!
-		autocmd BufWritePost ~/.vimrc BundleInstall
+		if has('unix')
+			autocmd BufWritePost ~/.vimrc source ~/.vimrc
+			" Remove any old bundles.
+			autocmd BufWritePost ~/.vimrc BundleClean!
+			" Install new bundles.
+			autocmd BufWritePost ~/.vimrc BundleInstall
+		elseif has('win32') || has('win64')
+			autocmd BufWritePost ~/_vimrc source ~/_vimrc
+			" Remove any old bundles.
+			autocmd BufWritePost ~/_vimrc BundleClean!
+			" Install new bundles.
+			autocmd BufWritePost ~/_vimrc BundleInstall
+		endif
 	augroup END
 endif
