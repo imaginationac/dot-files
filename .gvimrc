@@ -20,12 +20,8 @@ endif
 
 " Source .gvimrc on write
 if has("autocmd")
-	augroup gvimrc_write
+	augroup gvimrc
 		autocmd!
-		if has ('unix')
-			autocmd BufWritePost ~/.gvimrc source ~/.gvimrc
-		elseif has('win32') || has('win64')
-			autocmd BufWritePost ~/_gvimrc source ~/_gvimrc
-		endif
+		autocmd BufWritePost $MYGVIMRC source $MYGVIMRC
 	augroup END
 endif
