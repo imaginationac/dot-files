@@ -86,11 +86,8 @@ if has("autocmd")
 	" Clean up old bundles and install new ones.
 	augroup vundle
 		autocmd!
-		set verbose=9
 		autocmd BufWritePost $MYVIMRC BundleClean!
 		autocmd BufWritePost $MYVIMRC BundleInstall
-		set verbose=0
-		" TODO: Update vundles on the first of the month.
 	augroup END
 	" Haskell whitespace rules.
 	augroup haskell
