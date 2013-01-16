@@ -1,7 +1,6 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle is a plugin manager
 " Install Vundle first
-" https://github.com/gmarik/vundle
+" https://github.com/gmarik/vundle#README
 set nocompatible
 filetype off
 
@@ -22,7 +21,6 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'wavded/vim-stylus'
 " Powerline isn't configured for Vundle yet, require some setup
 Bundle 'Lokaltog/powerline'
-Bundle 'othree/html5-syntax.vim'
 
 " Vim-Scripts.org sources (also hosted on Github)
 Bundle 'vim-coffee-script'
@@ -33,20 +31,27 @@ Bundle 'vim-json-bundle'
 
 filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has("syntax")
+	syntax enable
+endif
 
 set laststatus=2
-set encoding=utf-8
+if has("multi_byte_encoding")
+	set encoding=utf-8
+endif
 
 set number
 set background=dark
-colorscheme badwolf
+if has("eval")
+	colorscheme badwolf
+endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Whitespace rules
+" Global whitespace rules
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set hidden
-" TODO: Add whitespace rules for editing Haskell files.
+
 " Symbols for listchars
 set listchars=tab:▸\ ,eol:¬
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -55,62 +60,51 @@ source ~/.vim/bundle/powerline/powerline/ext/vim/source_plugin.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Command-T settings
 let g:CommandTMatchWindowAtTop=0
-if has("autocmd")
-	augroup CommandT_augroup
-		autocmd!
-		autocmd BufWritePost, * CommandTFlush
-	augroup END
-endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Clam settings
 let g:clam_winpos = 'belowright'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Keymappings
+
 " Gundo toggle
 nnoremap <F5> :GundoToggle<CR>
 
-" Open vimrc for editing
-if has('unix')
-	nnoremap ,v :e ~/.vimrc<CR>
-elseif has("win32") || has("win64")
-	nnoremap ,v :e ~/_vimrc<CR>
-endif
-
-" Open gvimrc for editing
-if has('unix')
-	nnoremap ,g :e ~/.gvimrc<CR>
-elseif has("win32") || has("win64")
-	nnoremap ,g :e ~/_gvimrc<CR>
-endif
+" Open vimrc, gvimrc for editing
+nnoremap ,v :e $MYVIMRC<CR>
+nnoremap ,g :e $MYGVIMRC<CR>
 
 " Toggle showing invisiblies (tabs and line endings)
-nnoremap ,l :set list!<CR>
+nnoremap <Leader>w :set list!<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Filetype autocommands
-" Set .md files as markdown
+" Autocommands
 if has("autocmd")
+	" Source .vimrc on write
+	augroup vimrc
+		autocmd!
+		autocmd BufWritePost $MYVIMRC source $MYVIMRC
+	augroup END
+	" Clean up old bundles and install new ones.
+	augroup vundle
+		autocmd!
+		set verbose=9
+		autocmd BufWritePost $MYVIMRC BundleClean!
+		autocmd BufWritePost $MYVIMRC BundleInstall
+		set verbose=0
+		" TODO: Update vundles on the first of the month.
+	augroup END
+	" Haskell whitespace rules.
+	augroup haskell
+		autocmd!
+		autocmd FileType haskell setlocal ts=4 sts=4 sw=4 expandtab
+	augroup END
+	" Flush the Command-T path cache.
+	augroup CommandT
+		autocmd!
+		autocmd BufWritePost, * CommandTFlush
+	augroup END
+	" Set the file type for the extendsion .md to markdown
 	augroup markdown
 		autocmd!
 		autocmd BufNewFile,BufWrite,BufRead, *.md set filetype=markdown
-	augroup END
-endif
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Source .vimrc on write
-if has("autocmd")
-	augroup vimrc_augroup
-		autocmd!
-		if has('unix')
-			autocmd BufWritePost ~/.vimrc source ~/.vimrc
-			" Remove any old bundles.
-			autocmd BufWritePost ~/.vimrc BundleClean!
-			" Install new bundles.
-			autocmd BufWritePost ~/.vimrc BundleInstall
-		elseif has('win32') || has('win64')
-			autocmd BufWritePost ~/_vimrc source ~/_vimrc
-			" Remove any old bundles.
-			autocmd BufWritePost ~/_vimrc BundleClean!
-			" Install new bundles.
-			autocmd BufWritePost ~/_vimrc BundleInstall
-		endif
 	augroup END
 endif
