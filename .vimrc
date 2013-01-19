@@ -70,6 +70,8 @@ let g:CommandTMatchWindowAtTop=0
 let g:clam_winpos = 'belowright'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Keymappings
+" Leader
+let mapleader = ","
 
 " Gundo toggle
 nnoremap <F5> :GundoToggle<CR>
