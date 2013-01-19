@@ -82,6 +82,9 @@ nnoremap <Leader>g :vsplit $MYGVIMRC<CR>
 
 " Toggle showing invisiblies (tabs and line endings)
 nnoremap <Leader>w :set list!<CR>
+
+" Toggle spell-check
+nnoremap <Leader>s :set spell!<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocommands
 if has("autocmd")
