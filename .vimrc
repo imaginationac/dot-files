@@ -77,8 +77,8 @@ let mapleader = ","
 nnoremap <F5> :GundoToggle<CR>
 
 " Open vimrc, gvimrc for editing
-nnoremap ,v :e $MYVIMRC<CR>
-nnoremap ,g :e $MYGVIMRC<CR>
+nnoremap <Leader>v :vsplit $MYVIMRC<CR>
+nnoremap <Leader>g :vsplit $MYGVIMRC<CR>
 
 " Toggle showing invisiblies (tabs and line endings)
 nnoremap <Leader>w :set list!<CR>
