@@ -45,6 +45,11 @@ set background=dark
 if has("eval")
 	colorscheme badwolf
 endif
+
+" Vertically split windows to the right.
+if has("vertsplit")
+	set splitright
+endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Global whitespace rules
 set tabstop=4
