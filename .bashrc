@@ -119,4 +119,6 @@ fi
 # See (https://github.com/sstephenson/rben#how-it-works)
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+# Add Node, npm to path.
 export PATH=$HOME/local/bin:$PATH
