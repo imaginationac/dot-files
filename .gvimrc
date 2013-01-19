@@ -12,7 +12,7 @@ set guioptions+=c
 " GUI font
 if has("gui_running")
 	if has("unix")
-		set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10,DejaVu\ Sans\ Mono\ 10,Monospace\ 10
+		set guifont=Monofur\ for\ Powerline\ 12,Monofur\ 12,Monospace\ 10
 	elseif has("win32") || has("win64")
 		set guifont=Consolas:h10:cANSI
 	endif
