@@ -114,4 +114,8 @@ if has("autocmd")
 		autocmd!
 		autocmd BufNewFile,BufWrite,BufRead, *.md set filetype=markdown
 	augroup END
+	augroup zsh-theme
+		autocmd!
+		autocmd BufNewFile,BufWrite,BufRead, *.zsh-theme set filetype=zsh
+	augroup END
 endif
