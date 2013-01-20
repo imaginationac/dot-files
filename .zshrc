@@ -41,3 +41,6 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 source $HOME/.rbenv/completions/rbenv.zsh
+
+# Add node & npm binaries to path
+export PATH="$HOME/local/bin:$PATH"
