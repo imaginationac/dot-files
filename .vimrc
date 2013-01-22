@@ -85,11 +85,6 @@ nnoremap <Leader>s :set spell!<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocommands
 if has("autocmd")
-	" Source .vimrc on write
-	augroup vimrc
-		autocmd!
-		autocmd BufWritePost $MYVIMRC source $MYVIMRC
-	augroup END
 	" Clean up old bundles and install new ones.
 	augroup vundle
 		autocmd!
@@ -114,5 +109,10 @@ if has("autocmd")
 	augroup zsh-theme
 		autocmd!
 		autocmd BufNewFile,BufWrite,BufRead, *.zsh-theme set filetype=zsh
+	augroup END
+	" Source .vimrc on write
+	augroup vimrc
+		autocmd!
+		autocmd BufWritePost $MYVIMRC source $MYVIMRC
 	augroup END
 endif
