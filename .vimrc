@@ -20,12 +20,12 @@ Bundle 'sjl/badwolf'
 Bundle 'kien/ctrlp.vim'
 Bundle 'wavded/vim-stylus'
 " Powerline isn't configured for Vundle yet, require some setup
-Bundle 'Lokaltog/powerline'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-surround'
+Bundle 'tomtom/tcomment_vim'
 
 " Vim-Scripts.org sources (also hosted on Github)
-Bundle 'vim-coffee-script'
-Bundle 'surround.vim'
-Bundle 'tComment'
 Bundle 'jade.vim'
 Bundle 'vim-json-bundle'
 
