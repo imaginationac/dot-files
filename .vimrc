@@ -12,7 +12,6 @@ Bundle 'gmarik/vundle'
 " Command-T requires additional setup
 Bundle 'wincent/Command-T'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'tomasr/molokai'
 Bundle 'sjl/gundo.vim'
 Bundle 'sjl/clam.vim'
 Bundle 'tpope/vim-fugitive'
