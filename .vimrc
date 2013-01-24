@@ -1,3 +1,4 @@
+" Vundle {{{
 " Vundle is a plugin manager
 " Install Vundle first
 " https://github.com/gmarik/vundle#README
@@ -8,8 +9,9 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Github sources
+let s:GitHubBundles = []
 Bundle 'gmarik/vundle'
-" Command-T requires additional setup
+" Command-T requires additional setup. See 'command-t.txt'
 Bundle 'wincent/Command-T'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'sjl/gundo.vim'
@@ -18,7 +20,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'sjl/badwolf'
 Bundle 'kien/ctrlp.vim'
 Bundle 'wavded/vim-stylus'
-" Powerline isn't configured for Vundle yet, require some setup
+" Powerline requires specifying the runtimepath.
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-surround'
@@ -29,7 +31,8 @@ Bundle 'jade.vim'
 Bundle 'vim-json-bundle'
 
 filetype plugin indent on
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Common visual settings. {{{
 if has("syntax")
 	syntax enable
 endif
@@ -49,23 +52,32 @@ endif
 if has("vertsplit")
 	set splitright
 endif
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Global whitespace rules
+" }}}
+" Global whitespace rules {{{
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set noexpandtab
 set hidden
 
 " Symbols for listchars
 set listchars=tab:▸\ ,eol:¬
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" Search options {{{
+set ignorecase
+set smartcase
+if has('extra_search')
+	set incsearch
+endif
+" }}}
+" Plugin specific settings {{{
 " Command-T settings
 let g:CommandTMatchWindowAtTop=0
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Clam settings
 let g:clam_winpos = 'belowright'
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Keymappings
+" }}}
+" Keymappings {{{
 " Leader
 let mapleader = ","
 
@@ -81,8 +93,8 @@ nnoremap <Leader>w :set list!<CR>
 
 " Toggle spell-check
 nnoremap <Leader>s :set spell!<CR>
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Autocommands
+" }}}
+" Autocommands {{{
 if has("autocmd")
 	" Clean up old bundles and install new ones.
 	augroup vundle
@@ -109,9 +121,15 @@ if has("autocmd")
 		autocmd!
 		autocmd BufNewFile,BufWrite,BufRead, *.zsh-theme set filetype=zsh
 	augroup END
+	" Folding for vimscript files
+	augroup filetype_vim
+		autocmd!
+		autocmd FileType vim setlocal foldmethod=marker
+	augroup END
 	" Source .vimrc on write
 	augroup vimrc
 		autocmd!
 		autocmd BufWritePost $MYVIMRC source $MYVIMRC
 	augroup END
 endif
+" }}}
