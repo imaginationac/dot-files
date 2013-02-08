@@ -74,6 +74,7 @@ set ignorecase
 set smartcase
 if has('extra_search')
 	set incsearch
+	set hlsearch
 endif
 " }}}
 " Plugin specific settings {{{
