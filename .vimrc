@@ -52,6 +52,12 @@ endif
 if has("vertsplit")
 	set splitright
 endif
+
+" Set foldlevel to all closed by default.
+set foldlevelstart=0
+
+" Don't show the mode on the last line.
+set noshowmode
 " }}}
 " Global whitespace rules {{{
 set tabstop=4
