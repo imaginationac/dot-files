@@ -17,3 +17,5 @@
 	ui = true
 [merge]
 	tool = gvimdiff
+[credential]
+	helper = gnome-keyring
