@@ -32,15 +32,19 @@ ZSH_THEME="imaginationac"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git npm)
+plugins=(bundler git npm rbenv)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-source $HOME/.rbenv/completions/rbenv.zsh
+# oh-my-zsh has ls aliases. Put them here after sourcing to prevent overriding.
+alias l='ls --color=always --group-directories-first'
+alias ll='l -l'
+alias la='l -a'
+alias lla='ll -a'
 
-# Add node & npm binaries to path
-export PATH="$HOME/local/bin:$PATH"
+# Customize to your needs...
+export MANWIDTH=80
+export PATH=/home/dorian/.rbenv/bin:/home/dorian/local/bin:/home/dorian/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+
+eval "$(rbenv init - zsh)"
+. /home/dorian/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
