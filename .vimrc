@@ -7,28 +7,28 @@ filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+Bundle 'gmarik/vundle'
 
 " Github sources
-let s:GitHubBundles = []
-Bundle 'gmarik/vundle'
-" Command-T requires additional setup. See 'command-t.txt'
-Bundle 'wincent/Command-T'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'sjl/gundo.vim'
-Bundle 'sjl/clam.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'sjl/badwolf'
-Bundle 'kien/ctrlp.vim'
-Bundle 'wavded/vim-stylus'
-" Powerline requires specifying the runtimepath.
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'aaronbieber/quicktask'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'imaginationac/html.vim'
+Bundle 'imaginationac/jade.vim'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'tpope/vim-surround'
+Bundle 'mattn/zencoding-vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'sjl/badwolf'
+Bundle 'sjl/clam.vim'
+Bundle 'sjl/gundo.vim'
+Bundle 'slim-template/vim-slim'
 Bundle 'tomtom/tcomment_vim'
-
-" Vim-Scripts.org sources (also hosted on Github)
-Bundle 'jade.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
 Bundle 'vim-json-bundle'
+Bundle 'wavded/vim-stylus'
+Bundle 'wincent/Command-T'
 
 filetype plugin indent on
 " }}}
