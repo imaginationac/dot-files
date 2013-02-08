@@ -19,3 +19,5 @@
 	tool = gvimdiff
 [credential]
 	helper = gnome-keyring
+[push]
+	default = simple
