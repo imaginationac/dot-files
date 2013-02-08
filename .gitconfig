@@ -11,7 +11,6 @@
 	email = imaginationac@gmail.com
 [core]
 	editor = "gvim -f"
-	excludesfile = /home/dorian/.gitignore
 	autocrlf = input
 	safecrlf = true
 [color]
