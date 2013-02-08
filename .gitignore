@@ -1,5 +1,25 @@
+################
+# Output files #
+################
+
+# Python
+*.pyc
+
+#######################
+# IDE generated files #
+#######################
+
+# Vim
 .*.sw[a-z]
 *.sw[a-z]
 *.un~
 Session.vim
+
+# Sublime Text 2
+*.sublime-project
+*.sublime-workspace
+
+###################
+# Logs and errors #
+###################
 *.log
