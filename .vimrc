@@ -77,12 +77,21 @@ if has('extra_search')
 	set hlsearch
 endif
 " }}}
+" Editing settings {{{
+" Sane backspacing in insert mode
+set backspace=2
+set directory=$HOME/.swp
+" }}}
 " Plugin specific settings {{{
-" Command-T settings
+" Command-T
 let g:CommandTMatchWindowAtTop=0
+let g:CommandTMatchWindowReverse=1
 
-" Clam settings
+" Clam
 let g:clam_winpos = 'belowright'
+
+" Powerline
+set rtp+=/home/dorian/.local/lib/python2.7/site-packages/powerline/bindings/vim
 " }}}
 " Keymappings {{{
 " Leader
@@ -95,11 +104,20 @@ nnoremap <F5> :GundoToggle<CR>
 nnoremap <Leader>v :vsplit $MYVIMRC<CR>
 nnoremap <Leader>g :vsplit $MYGVIMRC<CR>
 
-" Toggle showing invisiblies (tabs and line endings)
+" Toggle showing invisibles (tabs and line endings)
 nnoremap <Leader>w :set list!<CR>
 
 " Toggle spell-check
 nnoremap <Leader>s :set spell!<CR>
+
+" Toggle highlight search
+nnoremap <Leader>h :set hlsearch!<CR>
+
+" Command-T file list
+nnoremap <Leader>p :CommandT<CR>
+
+" Save the current session and exit
+nnoremap <F2> :mksession! $HOME/.lastvimsession<CR>:qa!<CR>
 " }}}
 " Autocommands {{{
 if has("autocmd")
@@ -109,24 +127,44 @@ if has("autocmd")
 		autocmd BufWritePost $MYVIMRC BundleClean!
 		autocmd BufWritePost $MYVIMRC BundleInstall
 	augroup END
-	" Haskell whitespace rules.
-	augroup haskell
-		autocmd!
-		autocmd FileType haskell setlocal ts=4 sts=4 sw=4 expandtab
-	augroup END
 	" Flush the Command-T path cache.
 	augroup CommandT
 		autocmd!
 		autocmd BufWritePost, * CommandTFlush
 	augroup END
-	" Set the file type for the extendsion .md to markdown
+	" Set the file type for the extension .md to markdown
 	augroup markdown
 		autocmd!
-		autocmd BufNewFile,BufWrite,BufRead, *.md set filetype=markdown
+		autocmd BufNewFile,BufWrite,BufRead, *.md setlocal filetype=markdown
+		autocmd FileType markdown setlocal textwidth=80
 	augroup END
 	augroup zsh-theme
 		autocmd!
-		autocmd BufNewFile,BufWrite,BufRead, *.zsh-theme set filetype=zsh
+		autocmd BufNewFile,BufWrite,BufRead, *.zsh-theme setlocal filetype=zsh
+	augroup END
+	augroup filetype_coffee
+		autocmd!
+		autocmd FileType coffee setlocal foldmethod=indent
+	augroup END
+	" Don't fold git diffs.
+	augroup filetype_git
+		autocmd!
+		autocmd FileType git setlocal foldmethod=manual
+	augroup END
+	augroup filetype_jade
+		autocmd!
+		autocmd FileType jade setlocal commentstring=//%s
+		autocmd FileType jade setlocal foldmethod=indent
+	augroup END
+	augroup filetype_sass
+		autocmd!
+		autocmd FileType sass setlocal softtabstop=2 tabstop=2 shiftwidth=2 expandtab
+		autocmd FileType sass setlocal foldmethod=indent
+	augroup END
+	" Don't expand tabs to space in Slim.
+	augroup filetype_slim
+		autocmd!
+		autocmd FileType slim setlocal noexpandtab
 	augroup END
 	" Folding for vimscript files
 	augroup filetype_vim
