@@ -33,6 +33,31 @@ Bundle 'msanders/snipmate.vim'
 
 filetype plugin indent on
 " }}}
+" Functions {{{
+
+" Get the current time.
+" Returns: one of the following values
+"	NUMBER: 0
+"	STRING: current time in 24-hour format (%H:%M)
+function! CurrentTime()
+	if !exists("*strftime")
+		echom "strftime is not available on your system."
+		return 0
+	endif
+	return strftime("%H")
+endfunction
+
+" Returns weather or not it is day time (between 6:00 AM and 6:00 PM)
+" Returns:
+"	NUMBER: 0 if false, 1 if true.
+function! IsDayTime()
+	let current_time = str2nr(CurrentTime())
+	let day_start = 6
+	let day_end = 18
+	return (current_time >= day_start) && (current_time <= day_end)
+endfunction
+
+" }}}
 " Common visual settings. {{{
 if has("syntax")
 	syntax enable
@@ -44,9 +69,15 @@ if has("multi_byte_encoding")
 endif
 
 set number
-set background=dark
+
+if IsDayTime()
+	set background=light
+else
+	set background=dark
+endif
+
 if has("eval")
-	colorscheme badwolf
+	colorscheme solarized
 endif
 
 " Vertically split windows to the right.
@@ -119,6 +150,7 @@ nnoremap <Leader>p :CommandT<CR>
 
 " Save the current session and exit
 nnoremap <F2> :mksession! $HOME/.lastvimsession<CR>:qa!<CR>
+
 " }}}
 " Autocommands {{{
 if has("autocmd")
