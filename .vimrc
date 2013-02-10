@@ -29,6 +29,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'vim-json-bundle'
 Bundle 'wavded/vim-stylus'
 Bundle 'wincent/Command-T'
+Bundle 'msanders/snipmate.vim'
 
 filetype plugin indent on
 " }}}
