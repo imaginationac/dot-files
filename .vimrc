@@ -42,13 +42,13 @@ filetype plugin indent on
 function! CurrentTime()
 	if !exists("*strftime")
 		echom "strftime is not available on your system."
-		return 0
+		return 0 
 	endif
 	return strftime("%H")
 endfunction
 
 " Returns weather or not it is day time (between 6:00 AM and 6:00 PM)
-" Returns:
+" Returns: 
 "	NUMBER: 0 if false, 1 if true.
 function! IsDayTime()
 	let current_time = str2nr(CurrentTime())
