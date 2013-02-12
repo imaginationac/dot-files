@@ -11,13 +11,17 @@ Bundle 'gmarik/vundle'
 
 " Github sources
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Raimondi/delimitMate'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'aaronbieber/quicktask'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'imaginationac/html.vim'
 Bundle 'imaginationac/jade.vim'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/zencoding-vim'
+Bundle 'mihaifm/vimpanel'
+Bundle 'msanders/snipmate.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/badwolf'
 Bundle 'sjl/clam.vim'
@@ -29,7 +33,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'vim-json-bundle'
 Bundle 'wavded/vim-stylus'
 Bundle 'wincent/Command-T'
-Bundle 'msanders/snipmate.vim'
 
 filetype plugin indent on
 " }}}
@@ -90,6 +93,9 @@ set foldlevelstart=0
 
 " Don't show the mode on the last line.
 set noshowmode
+
+" Lines to show above and below cursor
+set scrolloff=4
 " }}}
 " Global whitespace rules {{{
 set tabstop=4
@@ -112,7 +118,17 @@ endif
 " Editing settings {{{
 " Sane backspacing in insert mode
 set backspace=2
-set directory=$HOME/.swp
+
+" Store all swap files in a common directory, out of the way.
+if !isdirectory($HOME . "/tmp")
+	if exists("*mkdir")
+		execute mkdir($HOME . "/tmp")
+	else
+		echom "Cannot find the mkdir command on your system."
+	endif
+endif
+set directory=$HOME/tmp
+
 " }}}
 " Plugin specific settings {{{
 " Command-T
