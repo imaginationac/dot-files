@@ -33,7 +33,6 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-json-bundle'
 Bundle 'wavded/vim-stylus'
-Bundle 'wincent/Command-T'
 
 filetype plugin indent on
 " }}}
@@ -132,10 +131,6 @@ set directory=$HOME/tmp
 
 " }}}
 " Plugin specific settings {{{
-" Command-T
-let g:CommandTMatchWindowAtTop=0
-let g:CommandTMatchWindowReverse=1
-
 " Clam
 let g:clam_winpos = 'belowright'
 
