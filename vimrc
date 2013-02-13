@@ -134,6 +134,10 @@ set directory=$HOME/tmp
 " Clam
 let g:clam_winpos = 'belowright'
 
+" Ctrl-P
+" Show dot files.
+let g:ctrlp_show_hidden = 1
+
 " Powerline
 set rtp+=/home/dorian/.local/lib/python2.7/site-packages/powerline/bindings/vim
 " }}}
