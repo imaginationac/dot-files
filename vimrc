@@ -161,9 +161,6 @@ nnoremap <Leader>s :set spell!<CR>
 " Toggle highlight search
 nnoremap <Leader>h :set hlsearch!<CR>
 
-" Command-T file list
-nnoremap <Leader>p :CommandT<CR>
-
 " Save the current session and exit
 nnoremap <F2> :mksession! $HOME/.lastvimsession<CR>:qa!<CR>
 
@@ -175,11 +172,6 @@ if has("autocmd")
 		autocmd!
 		autocmd BufWritePost $MYVIMRC BundleClean!
 		autocmd BufWritePost $MYVIMRC BundleInstall
-	augroup END
-	" Flush the Command-T path cache.
-	augroup CommandT
-		autocmd!
-		autocmd BufWritePost, * CommandTFlush
 	augroup END
 	" Set the file type for the extension .md to markdown
 	augroup markdown
