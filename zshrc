@@ -43,8 +43,16 @@ alias la='l -a'
 alias lla='ll -a'
 
 # Customize to your needs...
-export MANWIDTH=80
-export PATH=/home/dorian/.rbenv/bin:/home/dorian/local/bin:/home/dorian/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+export MANWIDTH=80 #Man pages width set to 80 characters for easier scanning.
+export PATH=/home/dorian/.rbenv/bin:/home/dorian/.local/bin:$PATH
+export TERM=xterm-256color #256 colors in the terminal
 
-eval "$(rbenv init - zsh)"
-. /home/dorian/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+# rbenv init for zsh.
+if [[ -d ~/.rbenv ]]; then
+	eval "$(rbenv init - zsh)"
+fi
+
+# Source powerline.zsh for prompt.
+if [[ -a /home/dorian/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+	. /home/dorian/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+fi
