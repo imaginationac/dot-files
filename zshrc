@@ -32,7 +32,7 @@ ZSH_THEME=""
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bundler git npm pip rbenv)
+plugins=(bundler git npm pip rbenv vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -43,8 +43,9 @@ alias la='l -a'
 alias lla='ll -a'
 
 # Customize to your needs...
+export EDITOR=gvim
 export MANWIDTH=80 #Man pages width set to 80 characters for easier scanning.
-export PATH=/home/dorian/.rbenv/bin:/home/dorian/.local/bin:$PATH
+export PATH=/opt/vagrant/bin:/home/dorian/.rbenv/bin:/home/dorian/.local/bin:$PATH
 export TERM=xterm-256color #256 colors in the terminal
 
 # rbenv init for zsh.
