@@ -146,6 +146,9 @@ set rtp+=/home/dorian/.local/lib/python2.7/site-packages/powerline/bindings/vim
 " Leader
 let mapleader = ","
 
+" Write the buffer to file in normal mode.
+nnoremap <C-s> :w<CR>
+
 " Gundo toggle
 nnoremap <F5> :GundoToggle<CR>
 
