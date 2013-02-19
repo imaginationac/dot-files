@@ -60,6 +60,16 @@ function! IsDayTime()
 	return (current_time >= day_start) && (current_time <= day_end)
 endfunction
 
+" Sets the background based on the time of day.
+" TODO: Set the background based on an optional argument.
+function! SetBackground()
+	if IsDayTime()
+		set background=light
+	else
+		set background=dark
+	endif
+endfunction
+
 " }}}
 " Common visual settings. {{{
 if has("syntax")
