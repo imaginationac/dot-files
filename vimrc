@@ -177,11 +177,14 @@ if has("autocmd")
 		autocmd BufWritePost $MYVIMRC BundleClean!
 		autocmd BufWritePost $MYVIMRC BundleInstall
 	augroup END
-	" Set the file type for the extension .md to markdown
 	augroup markdown
 		autocmd!
+		" Set the file type for the extension .md to markdown
 		autocmd BufNewFile,BufWrite,BufRead, *.md setlocal filetype=markdown
+		" Set the textwidth to 80 characters in markdown files.
 		autocmd FileType markdown setlocal textwidth=80
+		" Normal mode mapping for checking empty link references.
+		autocmd FileType markdown nnoremap <buffer> <F3> /()<CR>
 	augroup END
 	augroup zsh-theme
 		autocmd!
