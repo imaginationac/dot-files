@@ -137,6 +137,7 @@ let g:clam_winpos = 'belowright'
 " Ctrl-P
 " Show dot files.
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = '\v[\/]\.(sass-cache|git|hg|svn)$'
 
 " Powerline
 set rtp+=/home/dorian/.local/lib/python2.7/site-packages/powerline/bindings/vim
