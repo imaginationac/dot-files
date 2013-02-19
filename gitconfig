@@ -9,6 +9,7 @@
 [user]
 	name = Dorian Patterson
 	email = imaginationac@gmail.com
+	signingkey = E5A62485
 [core]
 	editor = "gvim -f"
 	autocrlf = input
