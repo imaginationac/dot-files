@@ -83,10 +83,8 @@ endif
 
 set number
 
-if IsDayTime()
-	set background=light
-else
-	set background=dark
+if has('gui_running')
+	call SetBackground()
 endif
 
 if has("eval")
