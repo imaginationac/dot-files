@@ -50,7 +50,7 @@ function! CurrentTime()
 	return strftime("%H")
 endfunction
 
-" Returns weather or not it is day time (between 6:00 AM and 6:00 PM)
+" Returns whether or not it is day time (between 6:00 AM and 6:00 PM)
 " Returns: 
 "	NUMBER: 0 if false, 1 if true.
 function! IsDayTime()
