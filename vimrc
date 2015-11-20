@@ -143,8 +143,9 @@ set directory=$HOME/tmp
 " }}}
 " Plugin specific settings {{{
 " Clam
-let g:clam_winpos = 'belowright'
-
+if exists('g:clam_winpos')
+	let g:clam_winpos = 'belowright'
+endif
 " Ctrl-P
 " Show dot files.
 let g:ctrlp_show_hidden = 1
