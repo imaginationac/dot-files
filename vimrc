@@ -6,6 +6,7 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
+" TODO: Seperate vundles into a file.
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
