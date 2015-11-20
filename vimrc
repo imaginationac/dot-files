@@ -116,7 +116,7 @@ set noexpandtab
 set hidden
 
 " Symbols for listchars
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬,trail:․
 " }}}
 " Search options {{{
 set ignorecase
