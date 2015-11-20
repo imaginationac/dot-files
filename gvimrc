@@ -9,13 +9,14 @@ set guioptions-=L
 " Use console dialogs instead of popups
 set guioptions+=c
 
+" Set the spacing between lines
+set linespace=2
+
 " GUI font
-if has("gui_running")
-	if has("unix")
-		set guifont=Monofur\ for\ Powerline\ 12,Monofur\ 12,Monospace\ 10
-	elseif has("win32") || has("win64")
-		set guifont=Consolas:h10:cANSI
-	endif
+if has("unix")
+	set guifont=Monofur\ for\ Powerline\ 12,Monofur\ 12,Monospace\ 10
+elseif has("win32") || has("win64")
+	set guifont=Consolas:h10:cANSI
 endif
 
 " Source .gvimrc on write
