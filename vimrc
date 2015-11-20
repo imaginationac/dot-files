@@ -155,7 +155,9 @@ if exists('g:loaded_ctrlp')
 endif
 
 " Powerline
-set rtp+=/home/dorian/.local/lib/python2.7/site-packages/powerline/bindings/vim
+if !exists('g:powerline_loaded')
+	set rtp+=/home/dorian/.local/lib/python2.7/site-packages/powerline/bindings/vim
+endif
 " }}}
 " Keymappings {{{
 " Leader
