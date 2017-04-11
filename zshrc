@@ -37,7 +37,7 @@ plugins=(bundler git npm pip rbenv vagrant)
 source $ZSH/oh-my-zsh.sh
 
 # oh-my-zsh has ls aliases. Put them here after sourcing to prevent overriding.
-alias l='ls --color=always --group-directories-first'
+alias l='ls -G'
 alias ll='l -l'
 alias la='l -a'
 alias lla='ll -a'
