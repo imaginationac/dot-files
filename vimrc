@@ -1,7 +1,7 @@
 " Vundle {{{
 " Vundle is a plugin manager
 " Install Vundle first
-" https://github.com/gmarik/vundle#README
+" https://github.com/vundlevim/Vundle.vim#README
 set nocompatible
 filetype off
 
