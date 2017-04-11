@@ -5,10 +5,10 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 " TODO: Seperate vundles into a file.
 call vundle#rc()
-Bundle 'gmarik/vundle'
+Bundle 'Vundle/Vundle.vim'
 
 " Github sources
 Bundle 'Lokaltog/vim-easymotion'
