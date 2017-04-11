@@ -11,7 +11,7 @@ call vundle#rc()
 Bundle 'Vundle/Vundle.vim'
 
 " Github sources
-Bundle 'Lokaltog/vim-easymotion'
+Bundle 'easymotion/vim-easymotion'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'aaronbieber/quicktask'
