@@ -45,7 +45,7 @@ alias lla='ll -a'
 # Customize to your needs...
 export EDITOR=gvim
 export MANWIDTH=80 #Man pages width set to 80 characters for easier scanning.
-export PATH=/opt/vagrant/bin:/home/dorian/.rbenv/bin:/home/dorian/.local/bin:$PATH
+export PATH=/Users/dorianpatterson/Library/Python/2.7/bin:$PATH
 export TERM=xterm-256color #256 colors in the terminal
 
 # rbenv init for zsh.
@@ -53,7 +53,8 @@ if [[ -d ~/.rbenv ]]; then
 	eval "$(rbenv init - zsh)"
 fi
 
-# Source powerline.zsh for prompt.
-if [[ -a /home/dorian/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
-	. /home/dorian/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+# source powerline.zsh for prompt.
+POWERLINE_PATH="/Users/dorianpatterson/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh"
+if [[ -a $POWERLINE_PATH ]]; then
+	. $POWERLINE_PATH
 fi
