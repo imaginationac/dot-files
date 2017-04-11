@@ -13,7 +13,9 @@ set guioptions+=c
 set linespace=2
 
 " GUI font
-if has("unix")
+if has("mac")
+	set guifont=Source\ Code\ Pro\ for\ Powerline:h12,Monaco:16
+elseif has("unix")
 	set guifont=Monofur\ for\ Powerline\ 12,Monofur\ 12,Monospace\ 10
 elseif has("win32") || has("win64")
 	set guifont=Consolas:h10:cANSI
