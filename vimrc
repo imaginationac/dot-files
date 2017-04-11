@@ -170,8 +170,8 @@ nnoremap <C-s> :w<CR>
 nnoremap <F5> :GundoToggle<CR>
 
 " Open vimrc, gvimrc for editing
-nnoremap <Leader>v :vsplit $MYVIMRC<CR>
-nnoremap <Leader>g :vsplit $MYGVIMRC<CR>
+nnoremap <Leader>v :e $MYVIMRC<CR>
+nnoremap <Leader>g :e $MYGVIMRC<CR>
 
 " Toggle showing invisibles (tabs and line endings)
 nnoremap <Leader>w :set list!<CR>
