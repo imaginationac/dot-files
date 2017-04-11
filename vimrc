@@ -6,36 +6,8 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
-" TODO: Seperate vundles into a file.
 call vundle#rc()
-Bundle 'Vundle/Vundle.vim'
-
-" Github sources
-Bundle 'easymotion/vim-easymotion'
-Bundle 'Raimondi/delimitMate'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'aaronbieber/quicktask'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tmux-plugins/vim-tmux'
-Bundle 'imaginationac/html.vim'
-Bundle 'imaginationac/jade.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mattn/emmet-vim'
-Bundle 'mihaifm/vimpanel'
-Bundle 'msanders/snipmate.vim'
-Bundle 'myusuf3/numbers.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'sjl/badwolf'
-Bundle 'sjl/clam.vim'
-Bundle 'sjl/gundo.vim'
-Bundle 'slim-template/vim-slim'
-Bundle 'tomtom/quickfixsigns_vim'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'vim-json-bundle'
-Bundle 'wavded/vim-stylus'
+source ~/.vim/bundle.vim
 
 filetype plugin indent on
 " }}}
