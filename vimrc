@@ -158,6 +158,10 @@ nnoremap <Leader>h :set hlsearch!<CR>
 " Save the current session and exit
 nnoremap <F2> :mksession! $HOME/.lastvimsession<CR>:qa!<CR>
 
+" WORKAROUND for number.vim. Exiting insert mode with <C-c> does not toggle
+" relaitve numbers back on.
+inoremap <C-c> <Esc>
+
 " }}}
 " Autocommands {{{
 if has("autocmd")
