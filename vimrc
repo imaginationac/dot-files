@@ -168,8 +168,8 @@ if has("autocmd")
 	" Clean up old bundles and install new ones.
 	augroup vundle
 		autocmd!
-		autocmd BufWritePost $MYVIMRC BundleClean!
-		autocmd BufWritePost $MYVIMRC BundleInstall
+		autocmd BufWritePost $MYVIMRC PluginClean!
+		autocmd BufWritePost $MYVIMRC PluginInstall
 	augroup END
 	augroup markdown
 		autocmd!
