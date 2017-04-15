@@ -45,7 +45,7 @@ alias lla='ll -a'
 # Customize to your needs...
 export EDITOR=gvim
 export MANWIDTH=80 #Man pages width set to 80 characters for easier scanning.
-export PATH=/Users/dorianpatterson/Library/Python/2.7/bin:$PATH
+export PATH=/usr/local/opt/node@6/bin:/Users/dorianpatterson/Library/Python/2.7/bin:$PATH
 export TERM=xterm-256color #256 colors in the terminal
 export SHELL=/usr/local/bin/zsh
 
