@@ -3,7 +3,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Github sources
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'aaronbieber/quicktask'
+Plugin 'aaronbieber/vim-quicktask'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'imaginationac/html.vim'
