@@ -105,7 +105,7 @@ module.exports = {
 	//   `hyperpower`
 	//   `@company/project`
 	//   `project#1.0.1`
-	plugins: ["hyperterm-summon", "hypercwd"],
+	plugins: ["hyperterm-summon", "hypercwd", "hyperterm-clicky"],
 
 	// in development, you can create a directory under
 	// `~/.hyper_plugins/local/` and include it here
