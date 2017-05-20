@@ -41,6 +41,7 @@ alias l='ls -G'
 alias ll='l -l'
 alias la='l -a'
 alias lla='ll -a'
+alias vi='vim'
 
 # Customize to your needs...
 export EDITOR=gvim
