@@ -60,3 +60,7 @@ POWERLINE_PATH="/Users/dorianpatterson/Library/Python/2.7/lib/python/site-packag
 if [[ -a $POWERLINE_PATH ]]; then
 	. $POWERLINE_PATH
 fi
+
+# tabtab source for yarn package
+# uninstall by removing these lines or running `tabtab uninstall yarn`
+[[ -f /Users/dorianpatterson/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh ]] && . /Users/dorianpatterson/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh
