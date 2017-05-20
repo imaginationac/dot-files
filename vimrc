@@ -63,8 +63,10 @@ if has('gui_running')
 	call SetBackground()
 endif
 
-if has("eval")
+if has('gui_running')
 	colorscheme solarized
+else
+	colorscheme badwolf
 endif
 
 " Vertically split windows to the right.
