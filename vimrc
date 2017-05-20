@@ -82,6 +82,9 @@ set noshowmode
 
 " Lines to show above and below cursor
 set scrolloff=4
+
+" Don't break in middle of words when wrapping.
+set linebreak
 " }}}
 " Global whitespace rules {{{
 set tabstop=4
