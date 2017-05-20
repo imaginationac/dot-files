@@ -137,7 +137,6 @@ endif
 
 " Ctrl-P
 " Show dot files.
-
 if exists('g:loaded_ctrlp')
 	let g:ctrlp_show_hidden = 1
 	let g:ctrlp_custom_ignore = '\v[\/]\.(sass-cache|git|hg|svn)$'
@@ -233,6 +232,10 @@ if has("autocmd")
 	augroup vimrc
 		autocmd!
 		autocmd BufWritePost $MYVIMRC source $MYVIMRC
+	augroup END
+	augroup indent
+		autocmd!
+		autocmd BufWritePre * :normal magg=G`a
 	augroup END
 endif
 " }}}
