@@ -142,10 +142,14 @@ if exists('g:loaded_ctrlp')
 	let g:ctrlp_custom_ignore = '\v[\/]\.(sass-cache|git|hg|svn)$'
 endif
 
-" Powerline
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+" Powerline if compiled with python or is NOT neovim; otherwise use Airline
+if !has("nvim") && ( has("python") || has("python3") )
+	python from powerline.vim import setup as powerline_setup
+	python powerline_setup()
+	python del powerline_setup
+else
+
+endif
 " }}}
 " Keymappings {{{
 " Leader
