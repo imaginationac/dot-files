@@ -155,21 +155,6 @@ set directory=$HOME/tmp
 
 " }}}
 " Plugin specific settings {{{
-" Clam
-if exists('g:clam_winpos')
-	let g:clam_winpos = 'belowright'
-endif
-
-" EasyMotion
-" highlight link EasyMotionTarget ErrorMsg
-" highlight link EasyMotionShade  Comment
-"
-" highlight link EasyMotionTarget2First MatchParen
-" highlight link EasyMotionTarget2Second MatchParen
-"
-" highlight link EasyMotionMoveHL Search
-" highlight link EasyMotionIncSearch Search
-
 " Ctrl-P
 " Show dot files.
 if exists('g:loaded_ctrlp')
