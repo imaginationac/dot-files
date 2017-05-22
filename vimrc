@@ -1,16 +1,54 @@
-" Vundle {{{
-" Vundle is a plugin manager
-" Install Vundle first
-" https://github.com/vundlevim/Vundle.vim#README
-set nocompatible
-filetype off
+" Dein {{{
+" Dein is a plugin manager.
+" https://github.com/Shougo/dein.vim
+if &compatible
+	set nocompatible
+endif
+let deinPath = "~/.vim/dein/repos/github.com/dein.vim"
+let pluginBasePath = "~/.vim/dein"
+let githubSources = [
+			\ 'Shougo/dein.vim',
+			\ 'Raimondi/delimitMate',
+			\ 'Valloric/YouCompleteMe',
+			\ 'aaronbieber/vim-quicktask',
+			\ 'altercation/vim-colors-solarized',
+			\ 'easymotion/vim-easymotion',
+			\ 'imaginationac/html.vim',
+			\ 'imaginationac/jade.vim',
+			\ 'kchmck/vim-coffee-script',
+			\ 'kien/ctrlp.vim',
+			\ 'mattn/emmet-vim',
+			\ 'mihaifm/vimpanel',
+			\ 'msanders/snipmate.vim',
+			\ 'myusuf3/numbers.vim',
+			\ 'scrooloose/syntastic',
+			\ 'sjl/badwolf',
+			\ 'sjl/clam.vim',
+			\ 'sjl/gundo.vim',
+			\ 'slim-template/vim-slim',
+			\ 'tmux-plugins/vim-tmux',
+			\ 'tomtom/quickfixsigns_vim',
+			\ 'tomtom/tcomment_vim',
+			\ 'tpope/vim-fugitive',
+			\ 'tpope/vim-surround',
+			\ 'vim-airline/vim-airline',
+			\ 'vim-scripts/vim-json-bundle',
+			\ 'wavded/vim-stylus',
+			\ ]
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-source ~/.vim/bundle.vim
+set runtimepath+=~/.vim/dein/repos/github.com/dein.vim
+if dein#load_state(pluginBasePath)
+	call dein#begin(pluginBasePath)
+	for item in githubSources
+		call dein#add(item)
+	endfor
+	call dein#end()
+	call dein#save_state()
+endif
 
-call vundle#end()
 filetype plugin indent on
+syntax enable
+
 " }}}
 " Functions {{{
 
@@ -185,11 +223,6 @@ inoremap <C-c> <Esc>
 " Autocommands {{{
 if has("autocmd")
 	" Clean up old bundles and install new ones.
-	augroup vundle
-		autocmd!
-		autocmd BufWritePost $MYVIMRC PluginClean!
-		autocmd BufWritePost $MYVIMRC PluginInstall
-	augroup END
 	augroup markdown
 		autocmd!
 		" Set the file type for the extension .md to markdown
