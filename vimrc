@@ -247,14 +247,15 @@ if has("autocmd")
 		autocmd!
 		autocmd FileType vim setlocal foldmethod=marker
 	augroup END
+	" Auto indent buffer prior to writing to disk.
+	augroup indent
+		autocmd!
+		autocmd BufWritePre * :normal magg=G`a
+	augroup END
 	" Source .vimrc on write
 	augroup vimrc
 		autocmd!
 		autocmd BufWritePost $MYVIMRC source $MYVIMRC
-	augroup END
-	augroup indent
-		autocmd!
-		autocmd BufWritePre * :normal magg=G`a
 	augroup END
 endif
 " }}}
