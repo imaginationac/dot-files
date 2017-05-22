@@ -104,7 +104,7 @@ endif
 if has('gui_running')
 	colorscheme solarized
 else
-	colorscheme badwolf
+	silent! colorscheme badwolf
 endif
 
 " Vertically split windows to the right.
