@@ -45,8 +45,10 @@ if dein#load_state(pluginBasePath)
 endif
 
 filetype plugin indent on
-syntax enable
 
+if has("syntax")
+	syntax enable
+endif
 " }}}
 " Functions {{{
 
@@ -84,9 +86,6 @@ endfunction
 
 " }}}
 " Common visual settings. {{{
-if has("syntax")
-	syntax enable
-endif
 
 set laststatus=2
 if has("multi_byte_encoding")
