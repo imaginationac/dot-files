@@ -11,13 +11,13 @@
 	email = imaginationac@gmail.com
 	signingkey = E5A62485
 [core]
-	editor = "gvim -f"
+	editor = nvim
 	autocrlf = input
 	safecrlf = true
 [color]
 	ui = true
 [merge]
-	tool = gvimdiff
+	tool = nvim -d
 [credential]
 	helper = gnome-keyring
 [push]
