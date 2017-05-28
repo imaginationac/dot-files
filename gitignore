@@ -24,3 +24,8 @@ Session.vim
 # Logs and errors #
 ###################
 *.log
+
+##########
+# Mac OS #
+##########
+*.DS_Store
