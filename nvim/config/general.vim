@@ -1,4 +1,4 @@
-"Show line numbers
+" Show line numbers
 set number
 
 " Set foldlevel to all closed by default.
