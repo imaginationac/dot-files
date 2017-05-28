@@ -10,4 +10,5 @@ Plug 'neomake/neomake'
 Plug 'dojoteef/neomake-autolint'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-surround'
+Plug 'mhinz/vim-signify'
 call plug#end()
