@@ -1,5 +1,5 @@
+"Show line numbers
 set number
-
 
 " Set foldlevel to all closed by default.
 set foldlevelstart=0
@@ -13,30 +13,27 @@ set scrolloff=1
 " Don't break in middle of words when wrapping.
 set linebreak
 
-" Global whitespace rules {{{
+" Global whitespace rules
+" Tabs are shown as 4 spaces
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set noexpandtab
+
 set hidden
 
 " Symbols for listchars
 set listchars=tab:\|\ ,eol:¬,trail:․
-" }}}
 
-" Search options {{{
+" Search options
 set ignorecase
 set smartcase
 if has('extra_search')
 	set incsearch
 	set hlsearch
 endif
-" }}}
 
-" Editing settings {{{
 " Sane backspacing in insert mode
 set backspace=2
-
-" }}}
 
 colorscheme badwolf
