@@ -13,4 +13,5 @@ Plug 'tpope/vim-surround'
 Plug 'mhinz/vim-signify'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neco-vim'
+Plug 'jreybert/vimagit'
 call plug#end()
