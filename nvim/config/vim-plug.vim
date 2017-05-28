@@ -8,4 +8,5 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'myusuf3/numbers.vim'
 Plug 'neomake/neomake'
 Plug 'dojoteef/neomake-autolint'
+Plug 'vim-airline/vim-airline'
 call plug#end()
