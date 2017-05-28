@@ -9,4 +9,5 @@ Plug 'myusuf3/numbers.vim'
 Plug 'neomake/neomake'
 Plug 'dojoteef/neomake-autolint'
 Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-surround'
 call plug#end()
