@@ -6,4 +6,5 @@ Plug 'easymotion/vim-easymotion'
 Plug 'sheerun/vim-polyglot'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'myusuf3/numbers.vim'
+Plug 'neomake/neomake'
 call plug#end()
