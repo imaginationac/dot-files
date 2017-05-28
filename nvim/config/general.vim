@@ -38,3 +38,5 @@ endif
 set backspace=2
 
 " }}}
+
+colorscheme badwolf
