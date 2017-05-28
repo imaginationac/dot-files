@@ -37,3 +37,9 @@ endif
 set backspace=2
 
 colorscheme badwolf
+
+" Save the session on write.
+augroup session
+	autocmd!
+	autocmd BufWritePre * mksession! ~/.local/share/nvim/sessions/backup.vim
+augroup END
