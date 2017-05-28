@@ -11,4 +11,5 @@ Plug 'dojoteef/neomake-autolint'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-surround'
 Plug 'mhinz/vim-signify'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
