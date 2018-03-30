@@ -46,7 +46,7 @@ alias vi='vim'
 # Customize to your needs...
 export EDITOR=gvim
 export MANWIDTH=80 #Man pages width set to 80 characters for easier scanning.
-export PATH=/usr/local/opt/node@6/bin:/Users/dorianpatterson/Library/Python/2.7/bin:$PATH
+export PATH=/usr/local/opt/node@6/bin:$PATH
 export TERM=xterm-256color #256 colors in the terminal
 export SHELL=/usr/local/bin/zsh
 
@@ -56,7 +56,7 @@ if [[ -d ~/.rbenv ]]; then
 fi
 
 # source powerline.zsh for prompt.
-POWERLINE_PATH="/Users/dorianpatterson/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh"
+POWERLINE_PATH="/usr/local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh"
 if [[ -a $POWERLINE_PATH ]]; then
 	. $POWERLINE_PATH
 fi
