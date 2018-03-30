@@ -5,3 +5,4 @@ source ~/.config/nvim/config/plugins.vim
 
 " File type specific settings
 source ~/.config/nvim/config/markdown.vim
+source ~/.config/nvim/config/javascript.vim
