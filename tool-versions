@@ -1,1 +1,8 @@
-github-cli 2.10.1 
+github-cli 2.10.1
+exa 0.10.1
+bat 0.21.0
+ripgrep 13.0.0
+fzf 0.30.0
+zoxide 0.8.1
+nodejs lts
+rust 1.60.0
