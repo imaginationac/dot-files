@@ -67,3 +67,10 @@ fi
 
 # Required to use 'z'
 #. /usr/local/etc/profile.d/z.sh:q
+
+# asdf (See: https://asdf-vm.com/guide/getting-started.html#_3-install-asdf)
+. $HOME/.asdf/asdf.sh
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
