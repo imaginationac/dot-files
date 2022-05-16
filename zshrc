@@ -46,7 +46,7 @@ alias vi='vim'
 # Customize to your needs...
 export EDITOR=gvim
 export MANWIDTH=80 #Man pages width set to 80 characters for easier scanning.
-export PATH=/usr/local/opt/node@6/bin:$PATH
+export PATH=/usr/local/opt/node@6/bin:/home/dorian/.asdf/installs/rust/1.60.0/bin:$PATH
 export TERM=xterm-256color #256 colors in the terminal
 export SHELL=/usr/local/bin/zsh
 
