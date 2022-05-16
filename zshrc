@@ -66,4 +66,4 @@ fi
 [[ -f /Users/dorianpatterson/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh ]] && . /Users/dorianpatterson/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh
 
 # Required to use 'z'
-. /usr/local/etc/profile.d/z.sh
+#. /usr/local/etc/profile.d/z.sh:q
