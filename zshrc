@@ -77,3 +77,4 @@ autoload -Uz compinit && compinit
 export GPG_TTY=$(tty)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(zoxide init zsh)"
