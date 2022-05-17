@@ -41,5 +41,6 @@ colorscheme badwolf
 " Save the session on write.
 augroup session
 	autocmd!
+	call mkdir($HOME . "/.local/share/nvim/sessions", "p")
 	autocmd BufWritePre * mksession! ~/.local/share/nvim/sessions/backup.vim
 augroup END
